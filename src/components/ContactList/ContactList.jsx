@@ -1,10 +1,10 @@
 import userData from "../../userData.json";
 import Contact from "./Contact";
-const ContactList = () => {
+const ContactList = ({ contact }) => {
   return (
     <div>
       <ul>
-        {userData.map((item) => (
+        {contact.map((item) => (
           <Contact key={item.id} {...item} />
         ))}
       </ul>
