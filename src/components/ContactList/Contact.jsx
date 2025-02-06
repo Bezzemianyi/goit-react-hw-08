@@ -1,5 +1,5 @@
 import s from "./ContactList.module.css";
-const Contact = ({ name, number }) => {
+const Contact = ({ name, number, id, handleDelete }) => {
   return (
     <div>
       <li className={s.listItem}>
@@ -17,7 +17,13 @@ const Contact = ({ name, number }) => {
             {number}
           </p>
         </div>
-        <button className={s.btnDel} type="button">
+        <button
+          className={s.btnDel}
+          type="button"
+          onClick={() => {
+            handleDelete(id);
+          }}
+        >
           Delete{" "}
         </button>
       </li>

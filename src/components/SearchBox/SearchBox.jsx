@@ -1,11 +1,11 @@
-const SearchBox = ({ setContact, contact }) => {
+const SearchBox = ({ setFilter, contact }) => {
   return (
     <div>
       <p>Find contact by name</p>
       <input
         name="name"
         type="text"
-        onChange={(e) => setContact(e.target.value)}
+        onChange={(e) => setFilter(e.target.value.toLowerCase())}
       />
     </div>
   );

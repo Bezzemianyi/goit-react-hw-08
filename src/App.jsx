@@ -9,16 +9,19 @@ const App = () => {
   const [contact, setContact] = useState(userData);
   const [filter, setFilter] = useState("");
 
-  const filteredContacts = (name) => {
-    const newData = contact.filter((item) => item.name.toLowerCase() !== name);
-    setContact(newData);
-  };
+  const filteredContacts = contact.filter((item) =>
+    item.name.toLowerCase().includes(filter)
+  );
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox contact={contact} setContact={setContact} />
-      <ContactList contact={contact}>
+      <ContactForm contact={contact} setContact={setContact} />
+      <SearchBox contact={contact} setFilter={setFilter} />
+      <ContactList
+        filteredContacts={filteredContacts}
+        contact={contact}
+        setContact={setContact}
+      >
         <Contact />
       </ContactList>
     </div>

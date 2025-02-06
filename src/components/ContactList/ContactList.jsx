@@ -1,11 +1,14 @@
-import userData from "../../userData.json";
 import Contact from "./Contact";
-const ContactList = ({ contact }) => {
+const ContactList = ({ filteredContacts, setContact, contact }) => {
+  const handleDelete = (id) => {
+    const newData = contact.filter((item) => item.id !== id);
+    setContact(newData);
+  };
   return (
     <div>
       <ul>
-        {contact.map((item) => (
-          <Contact key={item.id} {...item} />
+        {filteredContacts.map((item) => (
+          <Contact key={item.id} {...item} handleDelete={handleDelete} />
         ))}
       </ul>
     </div>
