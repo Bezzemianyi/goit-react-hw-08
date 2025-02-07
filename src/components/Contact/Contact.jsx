@@ -1,4 +1,4 @@
-import s from "./ContactList.module.css";
+import s from "../ContactList/ContactList.module.css";
 const Contact = ({ name, number, id, handleDelete }) => {
   return (
     <div>

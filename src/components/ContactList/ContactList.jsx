@@ -1,4 +1,4 @@
-import Contact from "./Contact";
+import Contact from "../Contact/Contact";
 const ContactList = ({ filteredContacts, setContact, contact }) => {
   const handleDelete = (id) => {
     const newData = contact.filter((item) => item.id !== id);
