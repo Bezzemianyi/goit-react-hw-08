@@ -1,18 +1,12 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
-const ContactForm = ({ contact, setContact }) => {
-  const initialValues = {
-    name: "",
-    number: "",
-  };
+const ContactForm = ({ addContact }) => {
+  const initialValues = { name: "", number: "" };
+
   const handleSubmit = (values, actions) => {
-    const newContact = {
-      ...values,
-      id: crypto.randomUUID(),
-    };
-    console.log(values);
-    setContact((prev) => [...prev, newContact]);
+    const newContact = { ...values, id: crypto.randomUUID() };
+    addContact(newContact);
     actions.resetForm();
   };
   const re = /^\d{3}-\d{2}-\d{2}$/;

@@ -1,4 +1,4 @@
-const SearchBox = ({ setFilter, contact }) => {
+const SearchBox = ({ setFilter }) => {
   return (
     <div>
       <p>Find contact by name</p>

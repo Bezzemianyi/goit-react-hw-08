@@ -21,15 +21,21 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("contact", JSON.stringify(contact));
   }, [contact]);
+  const addContact = (newContact) => {
+    setContact((prev) => [...prev, newContact]);
+  };
+
+  const deleteContact = (id) => {
+    setContact((prev) => prev.filter((contact) => contact.id !== id));
+  };
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm contact={contact} setContact={setContact} />
-      <SearchBox contact={contact} setFilter={setFilter} />
+      <ContactForm addContact={addContact} />
+      <SearchBox setFilter={setFilter} />
       <ContactList
         filteredContacts={filteredContacts}
-        contact={contact}
-        setContact={setContact}
+        deleteContact={deleteContact}
       >
         <Contact />
       </ContactList>
