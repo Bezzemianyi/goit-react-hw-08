@@ -1,16 +1,27 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
-const ContactForm = ({ addContact }) => {
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/contactsSlice";
+const ContactForm = () => {
   const initialValues = { name: "", number: "" };
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
-    const newContact = { ...values, id: crypto.randomUUID() };
-    addContact(newContact);
+    const newContact = {
+      name: values.name,
+      number: values.number,
+      id: crypto.randomUUID(),
+    };
+
+    dispatch(addTodo(newContact));
     actions.resetForm();
   };
+
   const re = /^\d{3}-\d{2}-\d{2}$/;
   const onlyLatters = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+$/;
+
   const applySchema = Yup.object().shape({
     name: Yup.string()
       .required("Це поле обов'язкове")

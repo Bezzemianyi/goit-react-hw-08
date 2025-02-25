@@ -1,11 +1,15 @@
-const SearchBox = ({ setFilter }) => {
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../redux/filtersSlice";
+
+const SearchBox = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <p>Find contact by name</p>
       <input
         name="name"
         type="text"
-        onChange={(e) => setFilter(e.target.value.toLowerCase())}
+        onChange={(e) => dispatch(setFilter(e.target.value.toLowerCase()))}
       />
     </div>
   );
