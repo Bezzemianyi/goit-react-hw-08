@@ -8,14 +8,14 @@ const slice = createSlice({
     name: 'contacts',
     initialState,
     reducers: {
-        deleteTodo: (state, action) => {
+        deleteContact: (state, action) => {
             state.items = state.items.filter(item => item.id !== action.payload)
         },
-        addTodo: (state, action) => {
+        addContact: (state, action) => {
             state.items.push(action.payload)
         }
     }
 })
 
 export const contactsReducer = slice.reducer
-export const { deleteTodo, addTodo } = slice.actions;
+export const { deleteContact, addContact } = slice.actions;

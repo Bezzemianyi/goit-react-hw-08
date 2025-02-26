@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsSlice";
 const ContactForm = () => {
   const initialValues = { name: "", number: "" };
 
@@ -15,7 +15,7 @@ const ContactForm = () => {
       id: crypto.randomUUID(),
     };
 
-    dispatch(addTodo(newContact));
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 
