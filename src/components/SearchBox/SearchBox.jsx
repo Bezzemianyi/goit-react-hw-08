@@ -9,7 +9,7 @@ const SearchBox = () => {
       <input
         name="name"
         type="text"
-        onChange={(e) => dispatch(setFilter(e.target.value.toLowerCase()))}
+        onChange={(e) => dispatch(setFilter(e.target.value))}
       />
     </div>
   );

@@ -2,7 +2,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
+// import { addContact } from "../../redux/contactsSlice";
 const ContactForm = () => {
   const initialValues = { name: "", number: "" };
 
@@ -12,15 +13,14 @@ const ContactForm = () => {
     const newContact = {
       name: values.name,
       number: values.number,
-      id: crypto.randomUUID(),
     };
 
     dispatch(addContact(newContact));
     actions.resetForm();
   };
 
-  const re = /^\d{3}-\d{2}-\d{2}$/;
-  const onlyLatters = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+$/;
+  const re = /^\d{3}-\d{3}-\d{4}$/;
+  const onlyLatters = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/;
 
   const applySchema = Yup.object().shape({
     name: Yup.string()
