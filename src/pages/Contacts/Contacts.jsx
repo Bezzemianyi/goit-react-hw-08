@@ -20,9 +20,7 @@ const Contacts = () => {
     <div>
       <ContactForm />
       <SearchBox />
-      {error ? (
-        <h2>Something went wrong please try later</h2>
-      ) : loading ? (
+      {loading ? (
         <h2>Loading...</h2>
       ) : (
         <ContactList>
