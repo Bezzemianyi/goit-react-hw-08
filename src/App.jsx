@@ -11,7 +11,7 @@ import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefresh } from "./redux/auth/selectors";
 // import PrivateRoute from "./pages/PrivateRoute";
 // import RestrictedRoute from "./pages/RestrictedRoute";
-import s from "./App.module.css";
+import "./App.module.css";
 import { Suspense, lazy } from "react";
 
 const Contacts = lazy(() => import("./pages/Contacts/Contacts"));
