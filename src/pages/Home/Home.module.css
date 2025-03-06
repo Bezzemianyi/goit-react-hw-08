@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 56px;
+}

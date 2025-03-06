@@ -30,13 +30,13 @@ const slice = createSlice({
             .addCase(refreshUser.fulfilled, (state, action) => {
                 state.user = action.payload
                 state.isLoggedIn = true
-                isRefreshing = false
+                state.isRefreshing = false
             })
             .addCase(refreshUser.pending, (state, action) => {
-                isRefreshing = true
+                state.isRefreshing = true
             })
             .addCase(refreshUser.rejected, (state, action) => {
-                isRefreshing = false
+                state.isRefreshing = false
             })
     
     }

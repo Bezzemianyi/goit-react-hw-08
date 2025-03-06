@@ -7,7 +7,7 @@ ul {
 .listItem {
   display: flex;
   border: 1px solid black;
-  width: 250px;
+  min-width: 250px;
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
@@ -19,9 +19,21 @@ p {
   font-size: 20px;
 }
 .btnDel {
-  height: 35px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
 }
-
+.btnDel:hover {
+  background-color: #091ec2;
+  color: white;
+}
 .svg {
   margin-right: 10px;
+}
+
+.listWrapper {
+  padding-left: 20px;
+  padding-right: 20px;
 }

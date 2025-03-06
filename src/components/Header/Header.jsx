@@ -30,7 +30,7 @@ const Header = () => {
             </NavLink>
           </>
         )}
-        {user.name && <h3>{user.email}</h3>}
+        {user.name && <h3 className={s.mail}>{user.email}</h3>}
         {isLoggedIn && (
           <button className={s.btn} onClick={() => dispatch(logoutThunk())}>
             Logout

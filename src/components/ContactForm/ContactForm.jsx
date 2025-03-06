@@ -36,7 +36,7 @@ const ContactForm = () => {
   });
 
   return (
-    <div>
+    <div className={s.formWrapper}>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}

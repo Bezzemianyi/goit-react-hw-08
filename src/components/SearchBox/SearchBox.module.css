@@ -1,8 +1,13 @@
 .searchBox {
   text-align: center;
+  font-weight: 600;
 }
 
 .input {
+  margin-bottom: 20px;
   padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #1b1b1b;
+  font-size: 1.2rem;
   outline: none;
 }

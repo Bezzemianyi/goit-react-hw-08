@@ -42,8 +42,13 @@
   cursor: pointer;
   font-size: 1.2rem;
   border: 1px solid black;
+  color: black;
 }
 .button:hover {
   background-color: #091ec2;
   color: white;
+}
+
+.p {
+  color: black;
 }

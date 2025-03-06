@@ -1,5 +1,7 @@
 .header {
-  background-color: lightgray;
+  background-color: rgb(194, 189, 235);
+  padding: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 .link {
   font-size: 26px;
@@ -9,6 +11,7 @@
   display: flex;
   gap: 20px;
   justify-content: right;
+  align-items: center;
 }
 .active {
   color: red;
@@ -16,9 +19,16 @@
 }
 
 .btn {
-  height: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 500;
 }
-
-h3 {
-  margin: 0;
+.btn:hover {
+  background-color: #091ec2;
+  color: white;
+}
+.mail {
 }

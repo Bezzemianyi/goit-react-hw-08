@@ -9,8 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefresh } from "./redux/auth/selectors";
-import PrivateRoute from "./PrivateRoute";
-
+import PrivateRoute from "./pages/PrivateRoute";
+import RestrictedRoute from "./pages/RestrictedRoute";
+import s from "./App.module.css";
 const App = () => {
   const isRefreshing = useSelector(selectIsRefresh);
   const dispatch = useDispatch();
@@ -31,10 +32,16 @@ const App = () => {
               </PrivateRoute>
             }
           />
-          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/register"
+          element={<RestrictedRoute components={<Register />} redirectTo="/" />}
+        />
+        <Route
+          path="/login"
+          element={<RestrictedRoute components={<Login />} redirectTo="/" />}
+        />
       </Routes>
     </div>
   );
