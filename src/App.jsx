@@ -5,6 +5,7 @@ import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefresh } from "./redux/auth/selectors";
 import "./App.css";
 import { Suspense, lazy } from "react";
+import "./assets/sprite.svg";
 
 const Contacts = lazy(() => import("./pages/Contacts/Contacts"));
 const Home = lazy(() => import("./pages/Home/Home"));
