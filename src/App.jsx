@@ -37,7 +37,6 @@ const App = () => {
               </Layout>
             }
           />
-          {/* <Route index element={<Home />} /> */}
           <Route
             path="/contacts"
             element={

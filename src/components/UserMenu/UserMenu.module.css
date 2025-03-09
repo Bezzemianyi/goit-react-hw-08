@@ -1,0 +1,20 @@
+.user {
+}
+.btn {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn:hover {
+  background-color: #091ec2;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}

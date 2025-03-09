@@ -1,0 +1,13 @@
+.link {
+  font-size: 26px;
+  text-decoration: none;
+}
+.active {
+  color: red;
+  text-decoration: underline;
+}
+.wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
