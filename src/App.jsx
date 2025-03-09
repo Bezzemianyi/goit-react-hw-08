@@ -9,8 +9,10 @@ import "./assets/sprite.svg";
 
 const Contacts = lazy(() => import("./pages/Contacts/Contacts"));
 const Home = lazy(() => import("./pages/Home/Home"));
-const Register = lazy(() => import("./pages/Register/Register"));
-const Login = lazy(() => import("./pages/Login/Login"));
+const RegistrationForm = lazy(() =>
+  import("./pages/RegistrationForm/RegistrationForm")
+);
+const LoginForm = lazy(() => import("./pages/LoginForm/LoginForm"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const Layout = lazy(() => import("./Layout"));
 const PrivateRoute = lazy(() => import("./pages/PrivateRoute"));
@@ -27,27 +29,47 @@ const App = () => {
     <div>
       <Suspense fallback={<>loading...</>}>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute>
-                  <Contacts />
-                </PrivateRoute>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Route>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Home />
+              </Layout>
+            }
+          />
+          {/* <Route index element={<Home />} /> */}
+          <Route
+            path="/contacts"
+            element={
+              <Layout>
+                <PrivateRoute component={Contacts} redirectTo="/login" />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <NotFound />
+              </Layout>
+            }
+          />
+
           <Route
             path="/register"
             element={
-              <RestrictedRoute components={<Register />} redirectTo="/" />
+              <Layout>
+                <RestrictedRoute component={RegistrationForm} redirectTo="/" />
+              </Layout>
             }
           />
           <Route
             path="/login"
-            element={<RestrictedRoute components={<Login />} redirectTo="/" />}
+            element={
+              <Layout>
+                <RestrictedRoute component={LoginForm} redirectTo="/" />
+              </Layout>
+            }
           />
         </Routes>
       </Suspense>

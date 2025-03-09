@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from "formik";
-import s from "./Register.module.css";
+import s from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth/operations";
 import { Link } from "react-router-dom";

@@ -26,7 +26,7 @@ const slice = createSlice({
                 state.token = action.payload.token
                 state.isLoggedIn = true;
             })
-            .addCase(logoutThunk.fulfilled, (state, action) => initialState)
+            .addCase(logoutThunk.fulfilled, () => initialState)
             .addCase(refreshUser.fulfilled, (state, action) => {
                 state.user = action.payload
                 state.isLoggedIn = true

@@ -20,9 +20,7 @@ const slice = createSlice({
         .addCase(fetchContacts.pending, (state, action) => {
         state.isLoading = true
         })
-        .addCase(logoutThunk.fulfilled, (state, action) => {
-            state.isLoading = true
-        })
+        .addCase(logoutThunk.fulfilled, () => initialState)
         .addCase(fetchContacts.rejected, (state, action) => {
             state.isError = action.payload;
             state.isLoading = false;

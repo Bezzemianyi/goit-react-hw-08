@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { NavLink } from "react-router-dom";
-import s from "./Header.module.css";
+import s from "./AppBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import { logoutThunk } from "../../redux/auth/operations";
